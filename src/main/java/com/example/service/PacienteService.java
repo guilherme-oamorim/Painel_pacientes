@@ -19,8 +19,7 @@ public class PacienteService {
 	public RetornoDTO save(Paciente paciente) {
 		RetornoDTO retorno = new RetornoDTO();
 		
-		long idade = ChronoUnit.YEARS.between(paciente.getDataNasc(), LocalDate.now());
-		if (idade < 18) {
+		if (paciente.getIdade() < 18) {
 			retorno.setSucesso(false);
 			retorno.setMensagem("Menor que 18 anos!");
 			return retorno;
