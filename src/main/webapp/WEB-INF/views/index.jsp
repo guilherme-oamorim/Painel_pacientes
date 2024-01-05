@@ -21,20 +21,23 @@
         <form id="dados" name="dados" method="post" action="salvar" class="box-form">
             <div class="box-item">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" id="nome" name="nome" class="form-input" placeholder="Nome Sobrenome" required minlength="3" maxlength="30">
+                <input type="text" id="nome" name="nome" class="form-input" value="Fulano" placeholder="Nome Sobrenome" required minlength="3" maxlength="30">
             </div>
             <div class="box-item">
                 <label for="email" class="form-label">E-mail</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="email@seuemail.com" required>
+                <input type="email" id="email" name="email" class="form-input" value="fulano@gmail.com" placeholder="email@seuemail.com" required>
             </div>
             <div class="box-item">
                 <label for="data" class="form-label">Data de nascimento:</label>
-                <input type="date" id="data" name="data" class="form-input" required>
+                <input type="date" id="data" name="data" class="form-input" value="1990-12-01" required>
             </div>
             <div class="box-item">
                 <button class="form-btn">Cadastrar</button>
             </div>
         </form>
+        <div class="box-item">
+                <a class="link" href="/relatorio">Relatório</a>
+        </div>
     </div>
 </body>
 

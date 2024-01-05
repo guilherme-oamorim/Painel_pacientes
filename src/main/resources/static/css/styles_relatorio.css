@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+caption {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+table {
+    border: 1px solid #333;
+    margin: 20vh auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px;
+    border: 1px solid #333;
+}

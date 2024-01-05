@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salvar</title>
 
-    <link rel="stylesheet" href="../css/styles_salvar.css">
+    <link rel="stylesheet" href="/css/styles_salvar.css">
 </head>
 <body>
     <%
@@ -29,21 +29,26 @@
     
     paciente.setNome(nome);
     paciente.setEmail(email);
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    paciente.setDataNasc(LocalDate.parse(data, formatter));
-    
+    paciente.setDataNasc(LocalDate.parse(data));
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	LocalDate dataRight = LocalDate.parse(data);
+
     RetornoDTO retorno = service.save(paciente);
     %>
 
     <div class="box">
         <h2><%= retorno.getMensagem() %></h2>
-        <c:if test="retorno.isSucesso()">Sucesso!</c:if>
+<%--         <c:if test="retorno.isSucesso()">Sucesso!</c:if> --%>
         <% if (retorno.isSucesso()) { %>
-        <h3>Os dados salvos foram:</h3>
-        <p><b>Nome:</b> <%= nome %></p>
-        <p><b>E-mail:</b> <%= email %></p>
-        <p><b>Data de nascimento:</b> <%= data %></p>
+	        <h3>Os dados salvos foram:</h3>
+	        <p><b>Nome:</b> <%= nome %></p>
+	        <p><b>E-mail:</b> <%= email %></p>
+	        <p><b>Data de nascimento:</b> <%= dataRight.format(formatter) %></p>
         <% } %>
+        <div class="box-item">
+                <a class="link" href="/">Voltar</a>
+        </div>
     </div>
 </body>
 </html>

@@ -2,6 +2,7 @@ package com.example.service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,5 +37,9 @@ public class PacienteService {
 		retorno.setSucesso(true);
 		retorno.setMensagem("Cadastro salvo com sucesso");
 		return retorno;
+	}
+	
+	public List<Paciente> findAll() {
+		return repository.findAll();
 	}
 }
