@@ -5,18 +5,39 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+:root {
+    --color-dark: #333;
+    --color-gray: #666;
+    --color-white: #ececec;
+    --color-red: #dc143c;
+}
+
 caption {
+    font-family: 'Poppins';
     font-size: 25px;
+    color: var(--color-red);
     margin-bottom: 10px;
+    font-weight: 900;
 }
 
 table {
-    border: 1px solid #333;
     margin: 20vh auto;
     border-collapse: collapse;
 }
 
-td, th {
+td {
     padding: 5px;
-    border: 1px solid #333;
+    border: 1px solid var(--color-dark);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--color-white);
+}
+
+th {
+    border: 1px solid var(--color-dark);
+    background-color: var(--color-gray);
+    color: #fff;
+    text-align: center;
+    padding: 5px 15px;
 }
