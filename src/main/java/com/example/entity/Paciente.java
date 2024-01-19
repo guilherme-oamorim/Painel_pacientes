@@ -33,6 +33,7 @@ public class Paciente {
 	private Long idade;
 	private LocalDateTime dataCadastro;
 	private LocalDateTime ultimaAtt;
+	private String queixa;
 	
 	
 	@PrePersist

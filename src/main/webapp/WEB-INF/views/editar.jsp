@@ -14,7 +14,7 @@
 
 <body>
 	<div class="container">
-		<h1>Projeto Pacientes</h1>
+		<h1>Página de edição</h1>
 
 		<div class="box-form">
 			<div class="box-item">
@@ -31,14 +31,17 @@
 				<input type="date" id="dataNasc" name="dataNasc" class="form-input" value="${paciente.dataNasc}" required>
 			</div>
 			<div class="box-item">
+				<label for="nome" class="form-label">Queixa Principal</label>
+				<textarea type="textarea" id="queixa" name="queixa" class="form-input"> </textarea>
+			</div>
+			<div class="box-item">
 				<button onclick="salvar()" class="form-btn">Salvar</button>
 			</div>
-		</div>
-		
 			<div class="box-item">
-                <a class="link" href="/relatorio">Voltar</a>
-    		</div>
-
+                <a class="link voltar" href="/relatorio">Voltar</a>
+        	</div>
+		</div>
+    	
 	</div>
 </body>
 
