@@ -6,6 +6,9 @@
 }
 
 :root {
+	--color-dark: #333;
+    --color-gray: #666;
+    --color-whiteTable: #ececec;
 	--color-white: #f3f4f5;
 	--color-red: #dc143c;
 }
@@ -44,12 +47,17 @@ h1, h2 {
 
 .form-input {
 	width: 100%;
-	border: 0;
+	border: solid 0.1px var(--color-gray);
 	background-color: var(--color-white);
 	height: 3.5rem;
 	border-radius: 5px;
 	padding: 10px;
 	font-size: 1.1rem;
+}
+
+.box-item textarea {
+	resize: none;
+	height: 5rem;
 }
 
 .form-btn {
@@ -62,6 +70,7 @@ h1, h2 {
 	font-size: 1.1rem;
 	font-weight: 600;
 	cursor: pointer;
+	margin: 0.5rem 0;
 }
 
 .form-btn:hover, .link:hover {
@@ -88,4 +97,88 @@ h1, h2 {
     text-align: center;
     line-height: 3.0rem;
 	text-decoration: none;
+}
+
+.box {
+    width: 90%;
+	height: auto;
+	margin: 30px auto;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #ffffffbd;
+}
+
+.box h2 {
+	margin: 0 .5rem;
+    margin-bottom: 20px;
+    text-align: center;
+	color: var(--color-red);
+	font-family: 'Poppins', sans-serif;
+}
+
+.box h3 {
+    margin-bottom: 10px;
+    color: var(--color-red);
+	font-family: 'Poppins', sans-serif;
+}
+
+.voltar{
+	width: 10%;
+	height: 2rem;
+	text-align: center;
+	justify-content: center;
+    line-height: 1.5rem;
+}
+
+/* tabela */
+
+.box-table {
+    margin: 5vh 15vh;
+}
+
+caption {
+    font-family: 'Poppins';
+    font-size: 25px;
+    color: var(--color-red);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+table {
+    margin: 10vh auto 2vh auto;
+    border-collapse: collapse;
+	font-size: 2.3vh;
+}
+
+td {
+	width: 10%;
+    padding: 5px;
+    border: 1px solid var(--color-dark);
+}
+
+td.edit {
+	width: 5%;
+	text-align: center;
+	font-size: 2.5vh;
+}
+
+i {
+	color: var(--color-dark);
+}
+
+i:hover {
+	color: var(--color-red);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--color-whiteTable);
+}
+
+th {
+	height: 10%;
+    border: 1px solid var(--color-dark);
+    background-color: var(--color-gray);
+    color: #fff;
+    text-align: center;
+    padding: 5px 15px;
 }

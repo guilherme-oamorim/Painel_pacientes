@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salvar</title>
 
-    <link rel="stylesheet" href="/css/styles_salvar.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <%
@@ -47,7 +47,7 @@
 	        <p><b>Data de nascimento:</b> <%= dataRight.format(formatter) %></p>
         <% } %>
         <div class="box-item">
-                <a class="link" href="/">Voltar</a>
+                <a class="link voltar" href="/">Voltar</a>
         </div>
     </div>
 </body>

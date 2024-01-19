@@ -32,7 +32,7 @@
 					value="fulano@gmail.com" placeholder="email@seuemail.com" required>
 			</div>
 			<div class="box-item">
-				<label for="data" class="form-label">Data de nascimento:</label> <input
+				<label for="data" class="form-label">Data de nascimento</label> <input
 					type="date" id="data" name="data" class="form-input"
 					value="1990-12-01" required>
 			</div>

@@ -27,16 +27,19 @@
 					class="form-input" value="${paciente.email}" required>
 			</div>
 			<div class="box-item">
-				<label for="data" class="form-label">Data de nascimento:</label> <input type="date" id="data"
+				<label for="data" class="form-label">Data de nascimento</label> <input type="date" id="data"
 					name="data" class="form-input" value="${paciente.dataNasc}" required>
 			</div>
 			<div class="box-item">
 				<label for="nome" class="form-label">Queixa Principal</label>
-				<textarea type="textarea" id="queixa" name="queixa" class="form-input"> </textarea>
+				<textarea type="textarea" style="resize: none;" id="queixa" name="queixa" class="form-input"> </textarea>
 			</div>
 			<div class="box-item">
 				<button class="form-btn">Salvar</button>
 			</div>
+			<div class="box-item">
+                <a class="link voltar" href="/relatorio">Voltar</a>
+        </div>
 		</form>
 
 	</div>
