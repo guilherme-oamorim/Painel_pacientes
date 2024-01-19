@@ -44,6 +44,9 @@ public class PacienteController {
 	
 	@PostMapping("/editar")
 	public ResponseEntity<?> editar(@RequestBody Paciente paciente) {
+		Paciente pacienteAtual = service.getById(paciente.getId());
+		paciente.setDataCadastro(pacienteAtual.getDataCadastro());
+				
 		System.out.println("salvando paciente");
 		RetornoDTO retorno = service.save(paciente);
 		if (retorno.isSucesso()) {
