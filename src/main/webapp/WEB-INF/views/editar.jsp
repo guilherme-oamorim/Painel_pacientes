@@ -15,7 +15,7 @@
 
 <body>
 	<div class="container">
-		<h1>Projeto Pacientes</h1>
+		<h1>Página de edição</h1>
 
 		<form id="dados" name="dados" method="post" action="editar" class="box-form">
 			<div class="box-item">
