@@ -41,3 +41,17 @@ th {
     text-align: center;
     padding: 5px 15px;
 }
+
+.link {
+	width: 100%;
+	height: 4.0rem;
+	border: 0;
+	border-radius: 5px;
+	background-color: var(--color-red);
+	color: white;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	text-decoration: none;
+	margin: 30%;
+}

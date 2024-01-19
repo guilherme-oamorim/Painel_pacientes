@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
@@ -24,17 +25,24 @@ import lombok.NoArgsConstructor;
 public class Paciente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	Long id;
-	String nome;
-	String email;
-	LocalDate dataNasc;
+	private Long id;
+	private String nome;
+	private String email;
+	private LocalDate dataNasc;
 	@Transient
-	Long idade;
-	LocalDateTime dataCadastro;
+	private Long idade;
+	private LocalDateTime dataCadastro;
+	private LocalDateTime ultimaAtt;
+	
 	
 	@PrePersist
 	public void prePersist() {
 		dataCadastro = LocalDateTime.now();
+	}
+	
+	@PreUpdate
+	public void preUpdate() {
+		ultimaAtt = LocalDateTime.now();
 	}
 	
 	public Long getIdade() {

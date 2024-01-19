@@ -15,6 +15,7 @@ import com.example.repository.PacienteRepository;
 public class PacienteService {
 	@Autowired
 	PacienteRepository repository;
+	
 
 	public RetornoDTO save(Paciente paciente) {
 		RetornoDTO retorno = new RetornoDTO();
@@ -26,7 +27,7 @@ public class PacienteService {
 		}
 		
 		boolean exist = repository.existsByEmail(paciente.getEmail());
-		if (exist) {
+		if (exist && paciente.getId() == null) {
 			retorno.setSucesso(false);
 			retorno.setMensagem("E-mail já existente!");
 			return retorno;
@@ -35,10 +36,15 @@ public class PacienteService {
 		Paciente pacienteSalvo = repository.save(paciente);
 		retorno.setSucesso(true);
 		retorno.setMensagem("Cadastro salvo com sucesso");
+		
 		return retorno;
 	}
-	
+
 	public List<Paciente> findAll() {
 		return repository.findAll();
+	}
+	
+	public Paciente getById(Long id) {
+		return repository.getById(id);
 	}
 }

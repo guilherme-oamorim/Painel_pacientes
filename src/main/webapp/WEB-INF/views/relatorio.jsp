@@ -25,6 +25,7 @@
 			<th>E-mail</th>
 			<th>Data de cadastro</th>
 			<th>Última atualização</th>
+			<th>Editar</th>
 		</thead>
 		<tbody>
 			<c:forEach var="paciente" items="${pacientes}">
@@ -33,11 +34,15 @@
 					<td>${paciente.idade}</td>
 					<td>${paciente.email}</td>
 					<td>${paciente.dataCadastro}</td>
-					<td>3</td>
+					<td>${paciente.ultimaAtt}</td>
+					<td><a href = "/editar/${paciente.id}">Editar</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<div class="box-item">
+                <a class="link" href="/">Voltar</a>
+    </div>
 </body>
 
 </html>
