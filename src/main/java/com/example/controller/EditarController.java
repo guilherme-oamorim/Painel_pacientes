@@ -16,39 +16,24 @@ import com.example.entity.Paciente;
 import com.example.service.PacienteService;
 
 @Controller
-public class PacienteController {
+public class EditarController {
 	@Autowired
-	PacienteService service;
+	PacienteService pacienteService;
 	
-	@GetMapping ("/")
-	public String index (Model model) {
-		return "index";
-	}
-	@PostMapping ("/salvar")
-	public String salvar (Model model) {
-		model.addAttribute("serviceVar",service);
-		return "salvar";
-	}
-	@GetMapping ("/relatorio")
-	public String relatorio (Model model) {
-		List<Paciente> pacientes = service.findAll();
-		model.addAttribute("pacientes",pacientes);
-		return "relatorio";
-	}
 	@GetMapping ("/editar/{id}")
 	public String editar (Model model, @PathVariable Long id) {
-		Paciente paciente = service.getById(id);
+		Paciente paciente = pacienteService.getById(id);
 		model.addAttribute("paciente", paciente);
 		return "editar";
 	}
 	
 	@PostMapping("/editar")
 	public ResponseEntity<?> editar(@RequestBody Paciente paciente) {
-		Paciente pacienteAtual = service.getById(paciente.getId());
+		Paciente pacienteAtual = pacienteService.getById(paciente.getId());
 		paciente.setDataCadastro(pacienteAtual.getDataCadastro());
 				
 		System.out.println("salvando paciente");
-		RetornoDTO retorno = service.save(paciente);
+		RetornoDTO retorno = pacienteService.save(paciente);
 		if (retorno.isSucesso()) {
 			return ResponseEntity.ok("Salvo com sucesso!");
 		}
