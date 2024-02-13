@@ -32,7 +32,7 @@
 			</div>
 			<div class="box-item">
 				<label for="nome" class="form-label">Queixa Principal</label>
-				<textarea type="textarea" id="queixa" class="form-input"> </textarea>
+				<textarea type="textarea" id="queixa" class="form-input">${paciente.queixa}</textarea>
 			</div>
 			<div class="box-item">
 				<button onclick="salvar()" class="form-btn">Salvar</button>
