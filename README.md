@@ -1,3 +1,2 @@
 # pacientes
-Projeto pacientes
-teste
+Projeto de criação de um painel com o cadastro de pacientes fictícios para uma psicóloga
