@@ -19,8 +19,7 @@
 		<h1>Projeto Pacientes</h1>
 		<h2>Cadastre-se</h2>
 
-		<form id="dados" name="dados" method="post" action="salvar"
-			class="box-form">
+		<div class="box-form">
 			<div class="box-item">
 				<label for="nome" class="form-label">Nome</label> <input type="text"
 					id="nome" name="nome" class="form-input" value="Fulano"
@@ -37,14 +36,43 @@
 					value="1990-12-01" required>
 			</div>
 			<div class="box-item">
-				<button class="form-btn">Cadastrar</button>
+				<button class="form-btn" onclick="salvar()" >Cadastrar</button>
 			</div>
 			<div class="box-item">
 				<a class="link" href="/relatorio">Relatório</a>
 			</div>
-		</form>
+		</div>
 
 	</div>
 </body>
+
+<script src="./javaScript.js">
+function salvar(){
+	console.log("salvando...");
+	
+	var payload = {};
+	payload.id = $("#id").val();
+	payload.nome = $("#nome").val();
+	payload.dataNasc = $("#dataNasc").val();
+	payload.email = $("#email").val();
+	
+	console.log(payload);
+	
+	$.ajax({
+		url: '/index',
+	    type: "POST",
+		headers: {
+	     'Content-Type': 'application/json'
+		},
+	     data: JSON.stringify(payload)
+		}).done(function (retorno) {
+			console.log(retorno)
+			alert(retorno);
+		}).fail(function (retorno){
+			alert(retorno);
+		});
+}
+</script>
+<script ></script>
 
 </html>
